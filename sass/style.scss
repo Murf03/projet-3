@@ -1,0 +1,237 @@
+@use './utils/_mixins.scss' as mixins;
+@use './utils/_variables.scss' as vars;
+
+
+// Big sections
+body {
+    font-family: vars.$txtfont;
+    width: 100%;
+}
+
+main,
+header {
+    margin: auto;
+    width: 100%;
+    @include mixins.center-of-page;
+}
+
+footer {
+    @include mixins.footer;
+}
+
+//End Big Sections
+
+//Header
+
+.head-logo {
+    @include mixins.logo;
+    @include mixins.head-logo;
+    @include mixins.center-of-page;
+}
+
+.localisation {
+    @include mixins.center-of-page;
+    @include mixins.localisation;
+    .localisation__icon {
+        margin-right: 20px;
+        font-size: large;
+    }
+    .localisation__txt {
+        font-weight: 500;
+    }
+    box-shadow: inset 0px 1px 2.5px -1px black;
+}
+
+//Header End
+
+//Main
+
+.explore {
+    background-color: vars.$explore-color;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    @include mixins.flex-col;
+    width: 100%;
+    .explore__title {
+        @include mixins.center-text;
+        @include mixins.big-text;
+        width: 75%;
+    }
+    .explore__subtitle {
+        font-size: larger;
+        @include mixins.center-text;
+        padding-bottom: 7.5%;
+        width: 80%;
+    }
+    .explore__btn {
+        @include mixins.website-btn;
+        @include mixins.light-shadow;
+    }
+}
+
+.usage {
+    @include mixins.flex-col;
+    width: 90%;
+    padding-bottom: 5%;
+    .usage__txt{
+        padding-top: 15%;
+        @include mixins.big-text;
+        width: 75%;
+    }
+    .usage__item {
+        @include mixins.flex-row;
+        background-color: vars.$explore-color;
+        height: 80px;
+        width: calc(100% - 10px);
+        border-radius: 20px;
+        margin-left: 10px;
+        margin-bottom: 7.5%;
+        justify-content: center;
+        align-items: center;
+        @include mixins.light-shadow;
+        .usage__item--index {
+            display: flex;
+            color: vars.$white;
+            background-color: vars.$first-color;
+            display: flex;
+            width: 25px;
+            height: 25px;
+            border-radius: 20px;
+            font-size: 15px;
+            @include mixins.center-of-page;
+            margin-left: -10px;
+            
+        }
+
+        //usage-color ici
+        .usage__item--icon {
+            color: vars.$icons-colors;
+            font-size: 18px;
+            padding-right: 7.5%;
+        }
+        .usage__item--txt {
+            font-weight: 600;
+            display: flex;
+            width: 80%;
+        }
+    }
+}
+
+@function usage-color($index){
+    @if $index == 3 {
+        @return vars.$first-color;
+    }
+    @return vars.$icons-colors;
+}
+
+.restos-section {
+    background-color: vars.$explore-color;
+    width: 100%;
+    @include mixins.center-of-page;
+    margin-top: 7.5%;
+}
+
+.restos {
+    @include mixins.flex-col;
+    background-color: vars.$explore-color;
+    width: 90%;
+    padding-bottom: 5%;
+    .restos__txt{
+        padding-top: 15%;
+        @include mixins.big-text;
+        width: 75%;
+    }
+    .restos__item{
+        position: relative;
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 20px;
+        width: 100%;
+        height: 255px;
+        @include mixins.flex-col;
+        margin-bottom: 25px;
+        @include mixins.light-shadow;
+        .restos__item--is-new {
+            width: 70px;
+            height: 25px;
+            background-color: vars.$third-color;
+            color: black;
+            @include mixins.center-of-page;
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            z-index: 100;
+            font-size: 14px;
+            border-radius: 2.5px;
+        }
+        .restos__item--image {
+            height: 180px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            object-fit: cover;
+        }
+        .resto{
+            @include mixins.flex-row;
+            height: 75px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding-top: 12.5px;
+            padding-bottom: 17.5px;
+            padding-left: 15px;
+            .resto__txt {
+                width: 90%;
+                @include mixins.flex-col;
+                justify-content: space-between;
+                
+                .resto__txt--title{
+                    font-size: 18px;
+                    font-weight: 800;
+                    display: block;
+                }
+                .resto__txt--subtitle{
+                    font-size: 16px;
+                }
+            }
+            .resto__like {
+                .resto__like--icon{
+                    margin-top: 5px;
+                    margin-right: 25px;
+                    font-size: 25px;
+                    height: 45;
+                    //background : linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+                }
+            }
+        } 
+    }
+}
+
+
+//Main End
+
+
+//Footer
+
+.footer-logo {
+    @include mixins.logo;
+    @include mixins.footer-logo;
+}
+
+.footer-links {
+    @include mixins.flex-col;
+}
+
+.footer-link {
+    @include mixins.footer-link;
+    cursor: pointer;
+    .footer-link__icon {
+        margin-right: 10px;
+    }
+    .footer-link__noicon {
+        display: none;
+    }
+    .footer-link__txt {
+        font-weight: 500;
+    }
+}
+
+//Footer End

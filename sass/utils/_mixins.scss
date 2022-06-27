@@ -1,0 +1,94 @@
+@use './_variables.scss' as vars;
+
+@mixin center-of-page {
+    @include flex-col;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin logo{
+    font-family: vars.$logoandtitlefont;
+    cursor: pointer;
+}
+
+@mixin head-logo{
+    height: 60px;
+    color: vars.$black;
+    font-size: xx-large;
+}
+
+@mixin footer-logo{
+    height: 35px;
+    color: vars.$white;
+    font-size: large;
+    padding-bottom: 5px;
+}
+
+//
+
+@mixin footer-link {
+    margin-top: 5px;
+    margin-bottom: 7.5px;
+    display: flex;
+    flex-direction: row;
+    color: vars.$white;
+}
+
+@mixin footer {
+    background-color: vars.$footer-color;
+    width: 95%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    @include flex-col;
+}
+
+@mixin localisation {
+    background-color: vars.$grey;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    flex-direction: row;
+}
+
+@mixin center-text {
+    margin: auto;
+    text-align: center
+}
+
+@mixin big-text {
+    font-size: xx-large;
+    font-weight: 800;
+    padding-bottom: 5%;
+}
+
+@mixin larger-text {
+    font-size: larger;
+    font-weight: 700;
+}
+
+@mixin light-shadow {
+    box-shadow: 0px 2.5px 12.5px -7.5px black;
+}
+
+@mixin website-btn {
+    height: 50px;
+    width: 50%;
+    margin: auto;
+    border-radius: 50px;
+    border: 0px;
+    color: vars.$white;
+    cursor: pointer;
+    background: linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+}

@@ -1,0 +1,260 @@
+@use './utils/mixins.scss' as mixins;
+@use './utils/_variables.scss' as vars;
+
+// Big sections
+body {
+    font-family: vars.$txtfont;
+    width: 100%;
+}
+
+main,
+header {
+    margin: auto;
+    width: 100%;
+    @include mixins.center-of-page;
+    position: relative;
+}
+
+footer {
+    @include mixins.footer;
+}
+
+//End Big Sections
+
+//Header
+
+.head-logo {
+    @include mixins.logo;
+    @include mixins.head-logo;
+    @include mixins.center-of-page;
+}
+
+.head-back {
+    position: absolute;
+    font-size: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+
+//Header End
+
+//Main
+
+.resto-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    z-index: 5;
+}
+
+.menu {
+    background-color: vars.$explore-color;
+    width: 100%;
+    //height: 200px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-top: 5%;
+    margin-top: -15%;
+    animation: fadein 0.5s, movement 1.5s;
+    z-index: 10;
+    .menu__title {
+        width: 90%;
+        //height: 50px;
+        @include mixins.center-of-page;
+        @include mixins.flex-row;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 5%;
+        
+        .menu__title--txt {
+            @include mixins.big-text;
+            font-style: oblique 15deg;
+            font-weight: 500;
+            @include mixins.logo;
+            cursor : default;
+            padding-bottom: 0px;
+        }
+
+        .menu__title--icon {
+            font-size: 30px;
+            margin-right: 2.5%;
+            cursor: pointer;
+        }
+    }
+    .plats {
+        @include mixins.flex-col;
+        width: 90%;
+        margin: auto;
+        padding-top: 5%;
+        .sous-menu {
+            @include mixins.flex-col;
+            margin-bottom: 2%;
+            .sous-menu__title {
+                padding-bottom: 5px;
+                font-size: 18px;
+            }
+            .sous-menu__border {
+                height: 0px;
+                background-color: vars.$third-color;
+                margin-left: 2px;
+                border-style: solid;
+                border-color: vars.$third-color;
+                border-width: 2px;
+                width: 40px;
+            }
+        }
+        .plat {
+            @include mixins.flex-row;
+            justify-content: space-between;
+            background-color: vars.$white;
+            width: 105%;
+            height: 80px;
+            margin-left: -2.5%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            border-radius: 18px;
+            position: relative;
+            cursor: pointer;
+            .plat__txt{
+                @include mixins.flex-col;
+                justify-content: space-between;
+                padding: 15px;
+                width: 95%;
+                .plat__txt--title {
+                    @include mixins.larger-text;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                .plat__txt--subtitle{
+                    font-size: 16px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+            }
+            .plat__prix {
+                position: absolute;
+                bottom: 15px;
+                right: 25px;
+                font-size: 17px;
+                font-weight: 600;
+                //animation: movement-price 2s;
+            }
+            .plat__selected {
+                @include mixins.center-of-page;
+                background-color: vars.$third-color;
+                height: 80px;
+                width: 100px;
+                border-top-right-radius: 18px;
+                border-bottom-right-radius: 18px;
+                animation: fadein 1s, movement-plat-hover 0.85s ease;
+                margin-right: 0px;
+                display: none;
+                .plat__selected--icon {
+                    font-size: 26px;
+                    color: vars.$white;
+                    animation: rotation 1s;
+                }
+
+            }
+        }
+        .plat:hover {
+            .plat__txt{
+                width: 50%;
+            }
+            .plat__prix {
+                right: 125px;
+                animation: movement-price 0.75s;
+            }
+            .plat__selected {
+                @include mixins.center-of-page;
+                margin: 0px;
+            }
+        }
+    }
+    .cmd {
+        @include mixins.center-of-page;
+        margin-top: 10%;
+        margin-bottom: 15%;
+        .cmd__btn {
+            @include mixins.website-btn;
+            @include mixins.light-shadow;
+        }
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0.5;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@keyframes movement-price {
+    from {
+        right: -25px;
+    }
+    to {
+        margin-top: -145px;
+    }
+}
+
+@keyframes movement {
+    from {
+        margin-top: -5%;
+    }
+    to {
+        margin-top: -15%;
+    }
+}
+
+@keyframes movement-plat-hover {
+    from {
+        margin-right: -120px;
+    }
+    to {
+        margin-right: 0px;
+    }
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+//Main End
+
+//Footer
+
+.footer-logo {
+    @include mixins.logo;
+    @include mixins.footer-logo;
+}
+
+.footer-links {
+    @include mixins.flex-col;
+}
+
+.footer-link {
+    @include mixins.footer-link;
+    cursor: pointer;
+    .footer-link__icon {
+        margin-right: 10px;
+    }
+    .footer-link__noicon {
+        display: none;
+    }
+    .footer-link__txt {
+        font-weight: 500;
+    }
+}
+
+//Footer End

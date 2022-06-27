@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ohmyfood</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="../css/resto.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+
+<body>
+    <header>
+        <span class="head-logo">ohmyfood</span>
+        <i class="fa-solid fa-arrow-left head-back" onclick="location.href='../index.html';"></i>
+    </header>
+
+    <main>
+        <img class="resto-image" src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+            alt="Le délice des sens" />
+        <section class="menu">
+            <div class="menu__title">
+                <span class="menu__title--txt">Le délice des sens</span>
+                <i class="far fa-heart menu__title--icon"></i>
+            </div>
+            <div class="plats">
+                <div class="sous-menu">
+                    <span class="sous-menu__title">ENTRÉES</span>
+                    <span class="sous-menu__border"></span>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Tartare de thon</span>
+                        <span class="plat__txt--subtitle">Assaisonné au yuzu</span>
+                    </div>
+                    <span class="plat__prix">25€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Bouchée de homard croustillant</span>
+                        <span class="plat__txt--subtitle">Et sa farandole de petits légumes</span>
+                    </div>
+                    <span class="plat__prix">35€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Velouté de cèpes</span>
+                        <span class="plat__txt--subtitle">Aux truffes</span>
+                    </div>
+                    <span class="plat__prix">20€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="plats">
+                <div class="sous-menu">
+                    <span class="sous-menu__title">PLATS</span>
+                    <span class="sous-menu__border"></span>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Poulet rôti aux herbes de Provence</span>
+                        <span class="plat__txt--subtitle">Et sa crème de truffe</span>
+                    </div>
+                    <span class="plat__prix">40€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Langouste rôtie</span>
+                        <span class="plat__txt--subtitle">Et ses légumes de saison</span>
+                    </div>
+                    <span class="plat__prix">35€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Côte de boeuf Angus</span>
+                        <span class="plat__txt--subtitle">Et sa purée de panais</span>
+                    </div>
+                    <span class="plat__prix">44€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="plats">
+                <div class="sous-menu">
+                    <span class="sous-menu__title">DESSERTS</span>
+                    <span class="sous-menu__border"></span>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Farandole de desserts</span>
+                        <span class="plat__txt--subtitle">Du chef</span>
+                    </div>
+                    <span class="plat__prix">18€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Crème brulée</span>
+                        <span class="plat__txt--subtitle">Revisitée</span>
+                    </div>
+                    <span class="plat__prix">22€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+                <div class="plat">
+                    <div class="plat__txt">
+                        <span class="plat__txt--title">Tiramisu</span>
+                        <span class="plat__txt--subtitle">À la noisette</span>
+                    </div>
+                    <span class="plat__prix">23€</span>
+                    <div class="plat__selected">
+                        <i class="fa-solid fa-circle-check plat__selected--icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="cmd">
+                <button class="cmd__btn">Commander</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-logo">ohmyfood</div>
+        <div class="footer-links">
+            <div class="footer-link">
+                <i class="fa-solid fa-utensils footer-link__icon"></i>
+                <span class="footer-link__txt">Proposer un restaurant</span>
+            </div>
+            <div class="footer-link">
+                <i class="fa-solid fa-handshake-angle footer-link__icon"></i>
+                <span class="footer-link__txt">Devenir partenaire</span>
+            </div>
+            <div class="footer-link">
+                <i class="footer-link__noicon"></i>
+                <span class="footer-link__txt">Mentions légales</span>
+            </div>
+            <div class="footer-link">
+                <i class="footer-link__noicon"></i>
+                <span class="footer-link__txt">Contact</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
