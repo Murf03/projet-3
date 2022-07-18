@@ -55,7 +55,7 @@
 }
 
 @mixin localisation {
-    background-color: vars.$grey;
+    background-color: #ece5ee;
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -91,4 +91,12 @@
     color: vars.$white;
     cursor: pointer;
     background: linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+}
+
+@mixin like-clicked {
+    font-weight: 900;
+    background: linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }

@@ -1,6 +1,9 @@
 @use './utils/_mixins.scss' as mixins;
 @use './utils/_variables.scss' as vars;
 
+*::-webkit-scrollbar {
+    display: none;
+  }
 
 // Big sections
 body {
@@ -88,6 +91,7 @@ footer {
         margin-bottom: 7.5%;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         @include mixins.light-shadow;
         .usage__item--index {
             display: flex;
@@ -114,6 +118,12 @@ footer {
             display: flex;
             width: 80%;
         }
+    }
+    .usage__item:hover {
+        .usage__item--icon {
+            color: vars.$first-color;
+        }
+        background-color: #edf1ff;
     }
 }
 
@@ -199,6 +209,9 @@ footer {
                     font-size: 25px;
                     height: 45;
                     //background : linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+                }
+                .resto__like--icon:hover {
+                    @include mixins.like-clicked;
                 }
             }
         } 

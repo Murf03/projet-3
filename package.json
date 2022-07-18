@@ -3,10 +3,11 @@
     "version": "1.0.0",
     "description": "ohmyfood - Projet OpenClassrooms",
     "scripts": {
-        "sassmain": "sass ./sass/style.scss:./css/style.css --style expanded",
+        "sassmain": "sass ./sass/style.scss:./css/style.css -w --style expanded",
         "sassresto": "sass ./sass/resto.scss:./css/resto.css -w --style expanded",
         "sassmainprod": "sass ./sass/main.scss:./public/css/style.css --style compressed && postcss ./public/css/style.css --use autoprefixer -d ./public/css",
-        "prefixmain": "postcss ./public/css/style.css --use autoprefixer -d ./public/css"
+        "prefixmain": "postcss ./css/style.css --use autoprefixer -d ./css",
+        "prefixresto": "postcss ./css/resto.css --use autoprefixer -d ./css"
     },
     "author": "",
     "license": "ISC",
