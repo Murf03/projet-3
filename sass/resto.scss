@@ -50,17 +50,14 @@ footer {
 .menu {
     background-color: vars.$explore-color;
     width: 100%;
-    //height: 200px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     padding-top: 5%;
     margin-top: -15%;
-    //animation: fadein 0.5s, movement 1.5s;
     z-index: 10;
     //
     .menu__title {
         width: 90%;
-        //height: 50px;
         @include mixins.center-of-page;
         @include mixins.flex-row;
         justify-content: space-between;
@@ -115,9 +112,8 @@ footer {
                 @include mixins.flex-row;
                 justify-content: space-between;
                 background-color: vars.$white;
-                width: 105%;
+                width: 100%;
                 height: 80px;
-                margin-left: -2.5%;
                 margin-top: 2%;
                 margin-bottom: 2%;
                 border-radius: 18px;
@@ -136,7 +132,8 @@ footer {
                     @include mixins.flex-col;
                     justify-content: space-between;
                     padding: 15px;
-                    width: calc(90% - 30px);
+                    width: calc(90% - 15px);
+                    transition: width 800ms ease-in-out;
                     .plat__txt--title {
                         @include mixins.larger-text;
                         text-overflow: ellipsis;
@@ -164,39 +161,29 @@ footer {
                     width: 0px;
                     border-top-right-radius: 18px;
                     border-bottom-right-radius: 18px;
+                    opacity: 0;
+                    transition: width 800ms ease-in-out, opacity 800ms ease-in;
                     .plat__selected--icon {
                         font-size: 26px;
                         color: vars.$white;
-                        animation: rotation 1s;
-                        display: none;
+                        opacity: 0;
+                        transition: 0.7s ease-in;
+                        transform:  rotate(-360deg);
                     }
     
                 }
             }
             .plat:hover {
                 .plat__txt{
-                    animation: txt-width 1.5s;
+                    width: calc(87.5% - 95px);
                 }
                 .plat__selected {
-                    animation: movement-plat-hover 0.85s ease;
-                    width: 120px;
+                    width: 80px;
+                    opacity: 1;
                     .plat__selected--icon {
-                        display: flex;
-                    }
-                }
-            }
-
-            .plat:active {
-                .plat__txt{
-                    animation: txt-width 1.5s;
-                    animation-direction: reverse;
-                }
-                .plat__selected {
-                    animation: movement-plat-hover 1s ease;
-                    animation-direction: reverse;
-                    width: 0px;
-                    .plat__selected--icon {
-                        display: none;
+                        transition: 0.85s ease-in;
+                        opacity: 1;
+                        transform:  rotate(360deg);
                     }
                 }
             }
@@ -209,7 +196,6 @@ footer {
         margin-bottom: 15%;
         .cmd__btn {
             @include mixins.website-btn;
-            @include mixins.light-shadow;
         }
     }
 }
@@ -237,12 +223,24 @@ footer {
     }
 }
 
-@keyframes txt-width {
+@keyframes fadeout {
     0% {
-        width: calc(90% - 30px);
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
     }
     100% {
-        width: calc(90% - 30px);
+        opacity: 0;
+    }
+}
+
+@keyframes txt-width {
+    0% {
+        width: calc(90% - 15px);
+    }
+    100% {
+        width: calc(90% - 2.5% - 15px - 120px);
     }
 }
 
@@ -261,6 +259,15 @@ footer {
     }
     to {
         width: 120px;
+    }
+}
+
+@keyframes movement-plat-hover-reverse {
+    from {
+        width: 120px;
+    }
+    to {
+        width: 0px;
     }
 }
 

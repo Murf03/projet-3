@@ -82,6 +82,10 @@
     box-shadow: 0px 2.5px 12.5px -7.5px black;
 }
 
+@mixin bigger-shadow {
+    box-shadow: 0px 0.5px 2.5px 1px black;
+}
+
 @mixin website-btn {
     height: 50px;
     width: 50%;
@@ -90,7 +94,12 @@
     border: 0px;
     color: vars.$white;
     cursor: pointer;
+    @include light-shadow;
     background: linear-gradient(175deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+    &:hover {
+        background: linear-gradient(175deg, rgb(250, 149, 221) 0%, rgb(176, 137, 224) 100%);
+        @include bigger-shadow;
+    }
 }
 
 @mixin like-clicked {
