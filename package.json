@@ -5,7 +5,7 @@
     "scripts": {
         "sassmain": "sass ./sass/style.scss:./css/style.css -w --style expanded",
         "sassresto": "sass ./sass/resto.scss:./css/resto.css -w --style expanded",
-        "sassmainprod": "sass ./sass/main.scss:./public/css/style.css --style compressed && postcss ./public/css/style.css --use autoprefixer -d ./public/css",
+        "sassmainprod": "sass ./sass/style.scss:./css/style.css --style compressed && postcss ./css/style.css --use autoprefixer -d ./css",
         "prefixmain": "postcss ./css/style.css --use autoprefixer -d ./css",
         "prefixresto": "postcss ./css/resto.css --use autoprefixer -d ./css"
     },

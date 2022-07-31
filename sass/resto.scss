@@ -114,10 +114,10 @@ footer {
                 background-color: vars.$white;
                 width: 100%;
                 height: 80px;
-                margin-top: 2%;
-                margin-bottom: 2%;
+                margin-top: 3.25%;
+                margin-bottom: 3.25%;
                 border-radius: 18px;
-                animation: fadein 1s;
+                animation: fadein 1s, movement 1s;
                 @for $i from 1 through 5{
                     &:nth-of-type(#{$i}) {
                         animation-fill-mode:both;
@@ -246,10 +246,10 @@ footer {
 
 @keyframes movement {
     from {
-        margin-top: -5%;
+        margin-top: 5%;
     }
     to {
-        margin-top: -15%;
+        margin-top: 0%;
     }
 }
 
